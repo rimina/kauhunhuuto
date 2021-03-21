@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/1 - Bedroom.unity
+    guid: 87fc3fff400d0467aa3cbc2cc60c2a79
+  - enabled: 1
+    path: Assets/Scenes/2 - Breakroom.unity
+    guid: 73c80236f6ae2408b90b5497c5821301
