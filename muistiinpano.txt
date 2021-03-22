@@ -1,0 +1,22 @@
+* point and click
+* erilaiset loput riippuen valinnoista
+* siirtymät
+* valoefekti
+
+* anselm reel
+
+
+* 3 eri loppua
+    * taskeja pitää tehdä tietyssä järjestyksessä
+    * tietyt jutut tulee esiin vasta kuin tietyt ensiehdot on tehty
+    * 3. lopussa on kaksi eri haaraa, joita voi mennä --> 4 loppua
+
+* eri ruokia hyllyssä
+    - voi yhdistää eri ruoka-aineista eri aterioita
+    - 3. eri reseptiä + mahdollisuus myrkyttää
+    - eri ruoat vie kohti eri loppua
+
+* paroni vilahtelee paikoissa
+    - jos näät 3 kertaa, niin game over
+
+* load & save
