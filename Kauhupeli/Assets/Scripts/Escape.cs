@@ -7,12 +7,5 @@ public class Escape : MonoBehaviour {
 	
 	void Update () {
 
-		if(Input.GetKeyDown("escape"))
-		{
-			Debug.Log("You escaped");
-			Application.Quit();
-
-		}
-		
 	}
 }

@@ -14,3 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2Breakroom.unity
     guid: 73c80236f6ae2408b90b5497c5821301
+  - enabled: 1
+    path: Assets/Scenes/Keittio.unity
+    guid: 86b57e15ce276a24186de31106ecad3b
+  m_configObjects: {}
