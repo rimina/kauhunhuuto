@@ -13,8 +13,8 @@ public class Spawner : MonoBehaviour
     void Start()
     {
 
-     Instantiate(objectToSpawn, transform.position, Quaternion.identity);
-     Debug.Log("Object spawned");
+        Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        Debug.Log("Object spawned");
      
     }
 
