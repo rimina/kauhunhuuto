@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/1Bedroom.unity
+- path: Assets/Scenes/3Keittio.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
