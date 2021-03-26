@@ -15,12 +15,7 @@ public class RoomScript : MonoBehaviour {
 	public void BeastSeen(){
 		++beastSightCount_;
 		Debug.Log("peto nähty:" + beastSightCount_);
-
-		if(beastSightCount_ >= 3){
-			Debug.Log("Hävisit pelin");
-			beastSightCount_ = 0;
-			Application.Quit();
-		}
+		GameState.Instance.beastSeen();
 	}
 
 	public void Update(){
@@ -28,7 +23,10 @@ public class RoomScript : MonoBehaviour {
 		{
 			Debug.Log("You escaped");
 			Application.Quit();
-
+		}
+		if(GameState.Instance.checkEndCondition()){
+			Debug.Log("Peli loppui!");
+			Application.Quit();
 		}
 		
 	}
