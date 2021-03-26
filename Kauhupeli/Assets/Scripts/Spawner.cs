@@ -6,28 +6,34 @@ public class Spawner : MonoBehaviour
 {
 
 	public GameObject objectToSpawn;
-	public AudioClip soundEffect;
+    private GameObject theRealObject_;
+
+    private AudioSource jingleCheek_;
     private bool soi_ = false;
     private bool spawned_ = false;
-    private RoomScript room_;
 
-    void Awake(){
-        room_ = GetComponent<RoomScript>();
-    }
-
+    [SerializeField] RoomScript room_;
+    
     // Start is called before the first frame update
     void Start()
     {
+        jingleCheek_ = GetComponent<AudioSource>();
         Debug.Log(room_);
+        theRealObject_= Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        theRealObject_.SetActive(false);
     }
 
     public void spawn(){
         if(!spawned_){
-            Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+            theRealObject_.SetActive(true);
             Debug.Log("Object spawned");
             spawned_ = true;
             room_.BeastSeen();
-        }   
+        }
+        else{
+            theRealObject_.SetActive(false);
+            spawned_ = false;
+        }
     }
 
     public void PlayAudio()
@@ -38,7 +44,8 @@ public class Spawner : MonoBehaviour
     private void PlaySoundClip()
     {
         if(!soi_){
-            /*AudioSource.PlayClipAtPoint(soundEffect, transform.position);*/
+            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+            jingleCheek_.Play();
             Debug.Log("Musa soi");
             soi_ = true;
         }
@@ -46,7 +53,7 @@ public class Spawner : MonoBehaviour
 
     public void stopAudio(){
         if(soi_){
-            /*AudioSource.Stop(soundEffect);*/
+            jingleCheek_.Stop();
             Debug.Log("Musa ei soi");
             soi_ = false;
         }

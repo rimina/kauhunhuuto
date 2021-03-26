@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour{
     private Spawner baron_;
 
     void Awake(){
-        baron_ = GetComponent<Spawner>();   
+        baron_ = GetComponent<Spawner>();
     }
 
     void Start(){

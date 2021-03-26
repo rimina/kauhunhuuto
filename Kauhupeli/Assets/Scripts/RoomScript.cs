@@ -24,6 +24,7 @@ public class RoomScript : MonoBehaviour {
 			Debug.Log("You escaped");
 			Application.Quit();
 		}
+		
 		if(GameState.Instance.checkEndCondition()){
 			Debug.Log("Peli loppui!");
 			Application.Quit();
