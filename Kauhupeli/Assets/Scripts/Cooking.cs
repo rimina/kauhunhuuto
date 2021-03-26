@@ -40,9 +40,16 @@ public class Cooking : MonoBehaviour{
 
         muu_.myrkky_ = false;
         muu_.ainekset_ = new Aine[] {Aine.Lammas, Aine.Mika, Aine.Faija};
+    }
 
-        pelaaja_.myrkky_ = false;
-        pelaaja_.ainekset_ = new Aine[] {Aine.Tyhja, Aine.Tyhja, Aine.Tyhja};
+    void Start(){
+        pelaaja_ = GameState.Instance.getPlayerRecipe();
+        if(pelaaja_.ainekset_ == null){
+            Debug.Log("Ei alustettu!");
+            pelaaja_.ainekset_ = new Aine[] {Aine.Tyhja, Aine.Tyhja, Aine.Tyhja};
+            pelaaja_.myrkky_ = false;
+            GameState.Instance.setPlayerRecipe(pelaaja_);
+        }
     }
 
     //Apufunktio reseptin tarkastukseen
@@ -91,27 +98,41 @@ public class Cooking : MonoBehaviour{
 
     //Lisää aineksen pelaajan tekemään ruokaan
     public bool addIngredient(Aine ingredient){
+        bool ok = false;
         for(int i = 0; i < 3; ++i){
             if(pelaaja_.ainekset_[i] == Aine.Tyhja){
                 pelaaja_.ainekset_[i] = ingredient;
                 Debug.Log("added ingredient: " + pelaaja_.ainekset_[i] + " at position " + i);
-                return true;
+                ok = true;
+                break;
             }
         }
-        Debug.Log("no room for new ingredients");
-        return false;
+        if(ok){
+            GameState.Instance.setPlayerRecipe(pelaaja_);
+        }
+        else{
+            Debug.Log("no room for new ingredients");
+        }
+        return ok;
     }
 
     //poistaa aineksen pelaajan tekemästä ruoasta
     public bool removeIngredient(Aine ingredient){
+        bool ok = false;
         for(int i = 0; i < 3; ++i){
             if(pelaaja_.ainekset_[i] == ingredient){
                 Debug.Log("removed ingredient: " + pelaaja_.ainekset_[i] + " at position " + i);
                 pelaaja_.ainekset_[i] = Aine.Tyhja;
-                return true;
+                ok = true;
+                break;
             }
         }
-        Debug.Log("ingredient not found");
+        if(ok){
+            GameState.Instance.setPlayerRecipe(pelaaja_);
+        }
+        else{
+            Debug.Log("ingredient not found");
+        }
         return false;
     }
 
