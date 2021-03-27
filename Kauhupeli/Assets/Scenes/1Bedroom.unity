@@ -134,6 +134,8 @@ GameObject:
   m_Component:
   - component: {fileID: 159856046}
   - component: {fileID: 159856045}
+  - component: {fileID: 159856048}
+  - component: {fileID: 159856047}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -207,6 +209,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159856047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159856044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cabd0d149b4664f8bb4e84b6111a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kupla_: {fileID: 1942049604}
+--- !u!58 &159856048
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159856044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &162863805
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,18 +656,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e70e1f876b0466f8521be6e397dddc, type: 3}
---- !u!114 &1543991560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114408434255803080, guid: 82e70e1f876b0466f8521be6e397dddc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1125707636}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a8da37bbb9f4214a7c6c84f393eec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1684374436
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,9 +942,8 @@ GameObject:
   - component: {fileID: 1942049605}
   - component: {fileID: 1942049604}
   - component: {fileID: 1942049607}
-  - component: {fileID: 1942049608}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Puhekupla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,12 +958,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942049603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01d78177d2794a91a8c3fa801491954, type: 3}
+  m_Script: {fileID: 11500000, guid: 6815895cd43a31a499b1ba37d2f185f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 8864655198705965085, guid: 9f4cd91a57d5546e1a15997ef85ebac2,
     type: 3}
-  room_: {fileID: 1543991560}
 --- !u!212 &1942049605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1019,7 +1036,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942049603}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18756e60c75994deaaf0edba6b5285fb, type: 3}
@@ -1108,18 +1125,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1942049608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942049603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8985609fd84e7c4da578011b73303ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1957196347
 GameObject:
   m_ObjectHideFlags: 0

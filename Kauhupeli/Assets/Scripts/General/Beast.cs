@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Beast : MonoBehaviour
 {
 
 	public GameObject objectToSpawn;
@@ -15,8 +15,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] RoomScript room_;
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
+
         jingleCheek_ = GetComponent<AudioSource>();
         Debug.Log(room_);
         theRealObject_= Instantiate(objectToSpawn, transform.position, Quaternion.identity);
@@ -44,7 +44,6 @@ public class Spawner : MonoBehaviour
     private void PlaySoundClip()
     {
         if(!soi_){
-            //AudioSource.PlayClipAtPoint(soundEffect, transform.position);
             jingleCheek_.Play();
             Debug.Log("Musa soi");
             soi_ = true;

@@ -7,17 +7,19 @@ public class RoomScript : MonoBehaviour {
 
 	private int beastSightCount_ = 0;
 
-	public void changescene(string scenename)
-	{
+	//Vaihtaa scenen
+	public void changescene(string scenename){
 		SceneManager.LoadScene(scenename);
 	}
 
+	//nähtiin random peto
 	public void BeastSeen(){
 		++beastSightCount_;
 		Debug.Log("peto nähty:" + beastSightCount_);
 		GameState.Instance.beastSeen();
 	}
 
+	//Lopetettiinko
 	public void Update(){
 		if(Input.GetKeyDown("escape"))
 		{
@@ -29,11 +31,10 @@ public class RoomScript : MonoBehaviour {
 			Debug.Log("Peli loppui!");
 			Application.Quit();
 		}
-		
 	}
 	
-	public void QuitGame()
-	{
+	//Halutaan lopettaa peli painamalla nappia
+	public void QuitGame(){
 		Debug.Log("QUIT!");
 		Application.Quit();
 	}

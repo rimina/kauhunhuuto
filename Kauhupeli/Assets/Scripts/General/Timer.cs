@@ -4,10 +4,10 @@ using System.Collections;
 public class Timer : MonoBehaviour{
     private float timeLeft_ = 10000.0f;
     private float time_ = 0.0f;
-    private Spawner baron_;
+    private Beast baron_;
 
     void Awake(){
-        baron_ = GetComponent<Spawner>();
+        baron_ = GetComponent<Beast>();
     }
 
     void Start(){
@@ -23,7 +23,6 @@ public class Timer : MonoBehaviour{
         if(timeLeft_ <= 0.0){
             timeLeft_ = 10000.0f;
             time_ = Time.time;
-            //Debug.Log("resetting timer! new start time: " + time_ + " time left: " + timeLeft_);
 
             if(!baron_.soi()){
                 baron_.PlayAudio();
