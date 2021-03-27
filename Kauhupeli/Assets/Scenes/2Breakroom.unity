@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 542056431}
   - component: {fileID: 542056430}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Takas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3Keittio
+          m_StringArgument: 1Bedroom
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &542056431
@@ -258,6 +258,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542056428}
   m_CullTransparentMesh: 1
+--- !u!1001 &634289419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8059947920624376804, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_Name
+      value: Beast
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b528181b3b5f22e47bdafe005cd6a351, type: 3}
 --- !u!1 &913320813
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +1013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050027682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.066, y: 0.026, z: 0}
+  m_LocalPosition: {x: 0.066, y: 0.026, z: 10}
   m_LocalScale: {x: 0.9326339, y: 0.9293229, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

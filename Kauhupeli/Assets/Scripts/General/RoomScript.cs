@@ -5,18 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class RoomScript : MonoBehaviour {
 
-	private int beastSightCount_ = 0;
-
 	//Vaihtaa scenen
 	public void changescene(string scenename){
 		SceneManager.LoadScene(scenename);
-	}
-
-	//nähtiin random peto
-	public void BeastSeen(){
-		++beastSightCount_;
-		Debug.Log("peto nähty:" + beastSightCount_);
-		GameState.Instance.beastSeen();
 	}
 
 	//Lopetettiinko

@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class Timer : MonoBehaviour{
-    private float timeLeft_ = 10000.0f;
+    private float timeLeft_ = 0.0f;
     private float time_ = 0.0f;
     private Beast baron_;
 
     void Awake(){
+        timeLeft_ = Random.Range(10.0f, 60.0f)*1000.0f;
         baron_ = GetComponent<Beast>();
     }
 
@@ -14,6 +15,7 @@ public class Timer : MonoBehaviour{
         Debug.Log(baron_);
         time_ = Time.time;
         Debug.Log("start time: " + time_);
+        Debug.Log("time left: " + timeLeft_);
     }
 
     public void Update(){
@@ -21,17 +23,19 @@ public class Timer : MonoBehaviour{
         timeLeft_ -= delta;
 
         if(timeLeft_ <= 0.0){
-            timeLeft_ = 10000.0f;
             time_ = Time.time;
 
-            if(!baron_.soi()){
-                baron_.PlayAudio();
+            //Jos paroni spawnasi, se piilotetaan 5s päästä
+            if(baron_.spawn()){
+                timeLeft_ = 500.0f;
+                Debug.Log("time left: " + timeLeft_);
             }
             else{
-                baron_.stopAudio();
+                //Muuten arvotaan random väli
+                timeLeft_ = Random.Range(10.0f, 60.0f)*1000.0f;
+                Debug.Log("time left: " + timeLeft_);
             }
-
-            baron_.spawn();
+            
         }
     }
 }
