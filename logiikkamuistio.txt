@@ -1,0 +1,14 @@
+ehto salahuoneeseen pääsemiseen:
+	- kirjastossa kirja, jossa salasana
+	- salasanalla pääsee huoneeseen
+
+lääkekaapin avain on:
+	- Paronin maalauksessa aulassa
+
+ehto lääkkeen löytämiseen:
+	- pitää ensin löytää avain
+	- kirjastossa
+
+Ikkunoista uuteen skeneen
+
+Paronia klikkaamalla sille ruokaa
