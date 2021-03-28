@@ -139,7 +139,7 @@ public class GameState{
             //return Loppu.PELAAJA;
             return true;
         }
-        else if(ruokaViety_ && laakeVietyYstavalle_){
+        else if(ruokaViety_ && laakeVietyYstavalle_ && myrkytetty_){
             Debug.Log("Sinä ja ystäväsi selvisitte");
             //return Loppu.YSTAVA_PELAAJA;
             return true;
