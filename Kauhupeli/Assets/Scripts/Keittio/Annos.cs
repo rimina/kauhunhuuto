@@ -5,8 +5,4 @@ public class Annos : MonoBehaviour{
 
     [SerializeField] Cooking kokkaus_;
     public GameObject gameObj;
-
-    /*void OnMouseDown(){
-
-    }*/
 }

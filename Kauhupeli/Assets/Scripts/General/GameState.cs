@@ -62,11 +62,9 @@ public class GameState{
     }
     public void keittiossaKayty(){
         ++keittiossaKayty_;
-        Debug.Log("Keittiössä käyty: " + keittiossaKayty_);
     }
     public void setPlayerRecipe(Resepti res){
         resepti_ = res;
-        Debug.Log("Recipe saved: " + resepti_);
     }
     public Resepti getPlayerRecipe(){
         return resepti_;
@@ -87,6 +85,7 @@ public class GameState{
     //MYKRKKY
     public void setMyrkytys(bool myrkky){
         myrkytetty_ = myrkky;
+        Debug.Log("Myrkky: " + myrkytetty_);
     }
     public bool getMyrkytys(){
         return myrkytetty_;

@@ -14,7 +14,6 @@ public class Timer : MonoBehaviour{
     void Start(){
         Debug.Log(baron_);
         time_ = Time.time;
-        Debug.Log("start time: " + time_);
         Debug.Log("time left: " + timeLeft_);
     }
 
@@ -28,7 +27,6 @@ public class Timer : MonoBehaviour{
             //Jos paroni spawnasi, se piilotetaan 5s päästä
             if(baron_.spawn()){
                 timeLeft_ = 500.0f;
-                Debug.Log("time left: " + timeLeft_);
             }
             else{
                 //Muuten arvotaan random väli

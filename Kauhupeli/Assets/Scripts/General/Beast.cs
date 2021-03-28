@@ -11,14 +11,10 @@ public class Beast : MonoBehaviour
     private AudioSource jingle_;
     private bool soi_ = false;
     private bool spawned_ = false;
-
-    //[SerializeField] RoomScript room_;
     
     // Start is called before the first frame update
     void Start(){
-
         jingle_ = GetComponent<AudioSource>();
-        //Debug.Log(room_);
         theRealObject_= Instantiate(objectToSpawn, transform.position, Quaternion.identity);
         theRealObject_.SetActive(false);
     }
@@ -27,7 +23,6 @@ public class Beast : MonoBehaviour
     {
         if(!soi_){
             jingle_.Play();
-            Debug.Log("Musa soi");
             soi_ = true;
         }
     }
@@ -35,7 +30,6 @@ public class Beast : MonoBehaviour
     private void stopAudio(){
         if(soi_){
             jingle_.Stop();
-            Debug.Log("Musa ei soi");
             soi_ = false;
         }
     }
@@ -47,7 +41,6 @@ public class Beast : MonoBehaviour
     public bool spawn(){
         if(!spawned_){
             theRealObject_.SetActive(true);
-            Debug.Log("Object spawned");
             spawned_ = true;
             playAudio();
             GameState.Instance.beastSeen();

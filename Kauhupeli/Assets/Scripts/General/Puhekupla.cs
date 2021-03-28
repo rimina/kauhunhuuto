@@ -15,13 +15,11 @@ public class Puhekupla : MonoBehaviour{
     public void show(){
         theRealObject_.SetActive(true);
         nakyy_ = true;
-        Debug.Log("Puhekuplan pitäisi näkyä");
     }
 
     public void hide(){
         theRealObject_.SetActive(false);
         nakyy_ = false;
-        Debug.Log("Puhekuplan ei pitäisi näkyä");
     }
 
     public bool nakyyko(){
