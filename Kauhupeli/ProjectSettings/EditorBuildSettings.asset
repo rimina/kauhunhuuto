@@ -18,9 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/3Keittio.unity
     guid: 86b57e15ce276a24186de31106ecad3b
   - enabled: 1
-    path: Assets/Scenes/4Valikaytava.unity
-    guid: 07a75ec5640dc470c9f31da1ba70071d
-  - enabled: 1
     path: Assets/Scenes/5Talli.unity
     guid: 942a8f2e82c56404280ba56303e87252
   - enabled: 1
@@ -41,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/11Salahuone.unity
     guid: 583599ed55be04144b437e420cbb088d
+  - enabled: 1
+    path: Assets/Scenes/Ikkuna_7Kaytava.unity
+    guid: 6bcb6ffefe0a44c7ebb377915258d7c7
   m_configObjects: {}
