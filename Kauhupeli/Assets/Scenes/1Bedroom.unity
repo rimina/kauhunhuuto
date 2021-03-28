@@ -1082,6 +1082,12 @@ PrefabInstance:
       propertyPath: room_
       value: 
       objectReference: {fileID: 1475835}
+    - target: {fileID: 8059947920624376807, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 9014762226317593824, guid: 29fdea71dbaa7ba46ab90974c16aeeb8,
+        type: 3}
     - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
         type: 3}
       propertyPath: m_RootOrder

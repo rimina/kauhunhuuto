@@ -4,19 +4,31 @@ using System.Collections;
 
 //HUOM placeholder ainekset
 public enum Aine{
-    Tyhja,
     Kinkku,
     Kananmuna,
+    Kala,
+    Leipa,
+    Salaatti,
     Maito,
     Lammas,
     Mika,
     Faija,
-    BMW
+    Tyhja
 }
 
 public struct Resepti{
     public bool myrkky_;
     public Aine[] ainekset_;
+    public bool superior_;
+    public bool valmis_;
+}
+
+public struct RaakaAine{
+    public Aine nimi;
+    public Vector3 alkuPaikka;
+    public Vector3 paikka;
+    public bool ruoassa;
+    public bool alustettu;
 }
 
 public class Cooking : MonoBehaviour{
@@ -26,20 +38,29 @@ public class Cooking : MonoBehaviour{
     private Resepti kela_;
     private Resepti muu_;
 
-    public Resepti pelaaja_;
+    private Resepti pelaaja_;
+    private Vector3 kattilaPos_;
 
     //alustetaan tila
     void Awake(){
 
         //HUOM, placeholder reseptit
         munakas_.myrkky_ = false;
+        munakas_.superior_ = false;
+        munakas_.valmis_ = true;
         munakas_.ainekset_ = new Aine[] {Aine.Kinkku, Aine.Kananmuna, Aine.Maito};
 
         kela_.myrkky_ = true;
-        kela_.ainekset_ = new Aine[] {Aine.Mika, Aine.Faija, Aine.BMW};
+        kela_.valmis_ = true;
+        kela_.superior_ = true;
+        kela_.ainekset_ = new Aine[] {Aine.Mika, Aine.Faija, Aine.Lammas};
 
         muu_.myrkky_ = false;
-        muu_.ainekset_ = new Aine[] {Aine.Lammas, Aine.Mika, Aine.Faija};
+        muu_.superior_ = false;
+        muu_.valmis_ = true;
+        muu_.ainekset_ = new Aine[] {Aine.Lammas, Aine.Kala, Aine.Salaatti};
+
+
     }
 
     void Start(){
@@ -48,8 +69,15 @@ public class Cooking : MonoBehaviour{
             Debug.Log("Ei alustettu!");
             pelaaja_.ainekset_ = new Aine[] {Aine.Tyhja, Aine.Tyhja, Aine.Tyhja};
             pelaaja_.myrkky_ = false;
+            pelaaja_.superior_ = false;
+            pelaaja_.valmis_ = false;
             GameState.Instance.setPlayerRecipe(pelaaja_);
         }
+
+    }
+
+    void OnDestroy(){
+        GameState.Instance.keittiossaKayty();
     }
 
     //Apufunktio reseptin tarkastukseen
@@ -78,12 +106,18 @@ public class Cooking : MonoBehaviour{
     //Tarkastaa onko pelaajan tekemä ruoka mikään resepteistä
     public bool checkFood(){
         if(onkoOikeaResepti(munakas_)){
+            pelaaja_.valmis_ = true;
+            pelaaja_.superior_ = false;
             return true;
         }
         else if(onkoOikeaResepti(kela_)){
+            pelaaja_.superior_ = true;
+            pelaaja_.valmis_ = true;
             return true;
         }
         else if(onkoOikeaResepti(muu_)){
+            pelaaja_.valmis_ = true;
+            pelaaja_.superior_ = false;
             return true;
         }
         else{

@@ -214,6 +214,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beast
       objectReference: {fileID: 0}
+    - target: {fileID: 8059947920624376807, guid: b528181b3b5f22e47bdafe005cd6a351,
+        type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 9014762226317593824, guid: 29fdea71dbaa7ba46ab90974c16aeeb8,
+        type: 3}
     - target: {fileID: 8059947920624376808, guid: b528181b3b5f22e47bdafe005cd6a351,
         type: 3}
       propertyPath: m_RootOrder
@@ -619,7 +625,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a8da37bbb9f4214a7c6c84f393eec2, type: 3}
+  m_Script: {fileID: 11500000, guid: b36eb6a2aba514917853574e942783d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1360357609

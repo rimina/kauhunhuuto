@@ -25,6 +25,10 @@ public class GameState{
     private bool laakeVietyYstavalle_ = false;
     private bool laakeVietyParonille_ = false;
 
+    private int keittiossaKayty_ = 0;
+
+    private RaakaAine[] ainekset_ = new RaakaAine[9];
+
     public static GameState Instance{
         get{
             if(GameState.instance_ == null){
@@ -43,7 +47,23 @@ public class GameState{
         return beastSightCount_;
     }
 
+    //RAAKA-AINEET
+    public void setIngredientState(RaakaAine aine){
+        ainekset_[(int)aine.nimi] = aine;
+    }
+
+    public RaakaAine getIngredientState(Aine index){
+        return ainekset_[(int)index];
+    }
+
     //KEITTIO
+    public int getKeittiossaKayty(){
+        return keittiossaKayty_;
+    }
+    public void keittiossaKayty(){
+        ++keittiossaKayty_;
+        Debug.Log("Keittiössä käyty: " + keittiossaKayty_);
+    }
     public void setPlayerRecipe(Resepti res){
         resepti_ = res;
         Debug.Log("Recipe saved: " + resepti_);
