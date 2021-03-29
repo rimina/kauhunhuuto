@@ -1,15 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-public enum Loppu{
-    PETOKUOLEMA,
-    YSTAVA,
-    PELAAJA,
-    YSTAVA_PELAAJA,
-    PARONI_PELAAJA,
-    JATKUU
-}
-
 public class GameState{
     protected GameState(){}
     private static GameState instance_ = null;
@@ -122,36 +113,37 @@ public class GameState{
 
 
     //END CONDITIONS
-    public bool checkEndCondition(){
+    public Loppu checkEndCondition(){
         if(beastSightCount_ >= 3){
             Debug.Log("Kuolit pelkoon!");
-            //return Loppu.PETOKUOLEMA;
-            return true;
+            return Loppu.PETOKUOLEMA;
+            //return true;
         }
         else if(laakeVietyYstavalle_ && !ruokaViety_){
             Debug.Log("Ystävä selvisi, sinä kuolit");
-            //return Loppu.YSTAVA;
-            return true;
+            return Loppu.NEUTRAL;
+            //return true;
 
         }
-        else if(ruokaViety_ && !laakeVietyYstavalle_){
-            Debug.Log("Sinä selvisit, ystäväsi kuoli");
-            //return Loppu.PELAAJA;
-            return true;
-        }
-        else if(ruokaViety_ && laakeVietyYstavalle_ && myrkytetty_){
-            Debug.Log("Sinä ja ystäväsi selvisitte");
-            //return Loppu.YSTAVA_PELAAJA;
-            return true;
-        }
-        else if(ruokaViety_ && laakeVietyParonille_){
+        else if(ruokaViety_ && laakeVietyParonille_ && !myrkytetty_){
             Debug.Log("Petit ystäväsi ja siirryit paronin puolelle");
-            //return Loppu.PARONI_PELAAJA;
-            return true;
+            return Loppu.BARON;
+            //return true;
+        }
+        else if(ruokaViety_ && !myrkytetty_){
+            Debug.Log("Sinä selvisit, ystäväsi kuoli");
+            return Loppu.BAD;
+            //return true;
+        }
+
+        else if(ruokaViety_ && myrkytetty_){
+            Debug.Log("Sinä ja ystäväsi selvisitte");
+            return Loppu.GOOD;
+            //return true;
         }
         else{
-            //return Loppu.JATKUU;
-            return false;
+            return Loppu.JATKUU;
+            //return false;
         }
     }
 }

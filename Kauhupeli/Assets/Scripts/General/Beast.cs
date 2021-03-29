@@ -48,9 +48,9 @@ public class Beast : MonoBehaviour
             theRealObject_.SetActive(true);
             spawned_ = true;
             playAudio();
-            GameState.Instance.beastSeen();
         }
         else{
+            GameState.Instance.beastSeen();
             theRealObject_.SetActive(false);
             spawned_ = false;
             stopAudio();
