@@ -35,7 +35,6 @@ public class RuokiParoni : MonoBehaviour{
     void OnMouseDown(){
     	if(GameState.Instance.getRuokaValmis() && !ruokaViety_){
     		ruokaViety_ = true;
-    		GameState.Instance.setRuokaViety(ruokaViety_);
     		kuollut_ = GameState.Instance.getMyrkytys();
             ruokakupla_.show();
             rkNakyvissa_ = true;
@@ -46,7 +45,6 @@ public class RuokiParoni : MonoBehaviour{
     	}
 
         if(laake_ && !kuollut_){
-            GameState.Instance.setLaakeVietyParonille(true);
             laakekupla_.show();
             lkNakyvissa_ = true;
             lkTime_ = Time.time;
@@ -63,6 +61,8 @@ public class RuokiParoni : MonoBehaviour{
                 ruokakupla_.hide();
                 rkNakyvissa_ = false;
                 rkTimeLeft_ = 2000.0f;
+                //Muutetaan tilaa vasta kun pelaaja on nähnyt viestin.
+                GameState.Instance.setRuokaViety(ruokaViety_);
             }
         }
 
@@ -73,6 +73,8 @@ public class RuokiParoni : MonoBehaviour{
                 laakekupla_.hide();
                 lkNakyvissa_ = false;
                 lkTimeLeft_ = 2000.0f;
+                //Muutetaan tilaa vasta kun pelaaja on nähnyt viestin.
+                GameState.Instance.setLaakeVietyParonille(true);
             }
         }
     }

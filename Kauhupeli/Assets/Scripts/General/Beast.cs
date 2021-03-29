@@ -50,6 +50,7 @@ public class Beast : MonoBehaviour
             playAudio();
         }
         else{
+            //Muutetaan tilaa vasta kun pelaaja on nähnyt pedon.
             GameState.Instance.beastSeen();
             theRealObject_.SetActive(false);
             spawned_ = false;
