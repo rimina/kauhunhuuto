@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Salasana.unity
     guid: ca9768f52d1a97f41ae9447be2e21dbf
+  - enabled: 1
+    path: Assets/Scenes/Kirja.unity
+    guid: 3dbfebb994e49e941baedd99f16bcdc7
   m_configObjects: {}
