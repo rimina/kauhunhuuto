@@ -7,12 +7,17 @@ public class Timer : MonoBehaviour{
     private Beast baron_;
 
     void Awake(){
-        timeLeft_ = Random.Range(20.0f, 120.0f)*1000.0f;
         baron_ = GetComponent<Beast>();
     }
 
     void Start(){
         time_ = Time.time;
+        if(GameState.Instance.onWindow()){
+            timeLeft_ = Random.Range(5.0f, 20.0f)*1000.0f;
+        }
+        else{
+            timeLeft_ = Random.Range(40.0f, 120.0f)*1000.0f;
+        }
         Debug.Log("time left: " + timeLeft_);
         
     }
@@ -30,7 +35,7 @@ public class Timer : MonoBehaviour{
             }
             else{
                 //Muuten arvotaan random väli
-                timeLeft_ = Random.Range(10.0f, 60.0f)*1000.0f;
+                timeLeft_ = Random.Range(40.0f, 120.0f)*1000.0f;
                 Debug.Log("time left: " + timeLeft_);
 
             }

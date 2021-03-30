@@ -16,6 +16,8 @@ public class GameState{
     private bool laakeVietyYstavalle_ = false;
     private bool laakeVietyParonille_ = false;
 
+    private bool onWindow_ = false;
+
     private int keittiossaKayty_ = 0;
 
     private RaakaAine[] ainekset_ = new RaakaAine[9];
@@ -36,6 +38,14 @@ public class GameState{
     }
     public int getBeastSightCount(){
         return beastSightCount_;
+    }
+
+    //IKKUNA
+    public bool onWindow(){
+        return onWindow_;
+    }
+    public void setWindow(bool on){
+        onWindow_ = on;
     }
 
     //RAAKA-AINEET
