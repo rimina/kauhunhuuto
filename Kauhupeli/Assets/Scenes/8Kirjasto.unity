@@ -1796,6 +1796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   huone_: {fileID: 1576686592}
+  kirja_: {fileID: 2040147429}
 --- !u!61 &2040147431
 BoxCollider2D:
   m_ObjectHideFlags: 0

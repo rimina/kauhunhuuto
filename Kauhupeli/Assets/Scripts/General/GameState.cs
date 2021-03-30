@@ -121,6 +121,15 @@ public class GameState{
         return laakeVietyParonille_;
     }
 
+    public bool kirjaLoydettavissa(){
+        if(ruokaValmis_ && !ruokaViety_){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 
     //END CONDITIONS
     public Loppu checkEndCondition(){
