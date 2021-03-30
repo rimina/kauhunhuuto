@@ -33,24 +33,24 @@ public class RuokiParoni : MonoBehaviour{
     }
 
     void OnMouseDown(){
-    	if(GameState.Instance.getRuokaValmis() && !ruokaViety_){
-    		ruokaViety_ = true;
-    		kuollut_ = GameState.Instance.getMyrkytys();
-            ruokakupla_.show();
-            rkNakyvissa_ = true;
-            rkTime_ = Time.time;
-    	}
-    	else if(!GameState.Instance.getRuokaValmis()){
-    		Debug.Log("You need to make the food first");
-    	}
-
         if(laake_ && !kuollut_){
             laakekupla_.show();
             lkNakyvissa_ = true;
             lkTime_ = Time.time;
-
-            Debug.Log("Thanks for the med!");
+            GameState.Instance.setLaakeVietyParonille(true);
         }
+
+    	if(GameState.Instance.getRuokaValmis() && !ruokaViety_){
+    		ruokaViety_ = true;
+    		kuollut_ = GameState.Instance.getMyrkytys();
+
+            GameState.Instance.setRuokaViety(ruokaViety_);
+    	}
+    	else if(!GameState.Instance.getRuokaValmis()){
+            ruokakupla_.show();
+            rkNakyvissa_ = true;
+            rkTime_ = Time.time;
+    	}
     }
 
     void Update(){
@@ -61,8 +61,6 @@ public class RuokiParoni : MonoBehaviour{
                 ruokakupla_.hide();
                 rkNakyvissa_ = false;
                 rkTimeLeft_ = 2000.0f;
-                //Muutetaan tilaa vasta kun pelaaja on nähnyt viestin.
-                GameState.Instance.setRuokaViety(ruokaViety_);
             }
         }
 
@@ -73,8 +71,6 @@ public class RuokiParoni : MonoBehaviour{
                 laakekupla_.hide();
                 lkNakyvissa_ = false;
                 lkTimeLeft_ = 2000.0f;
-                //Muutetaan tilaa vasta kun pelaaja on nähnyt viestin.
-                GameState.Instance.setLaakeVietyParonille(true);
             }
         }
     }

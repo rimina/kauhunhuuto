@@ -21,8 +21,5 @@ public class Laake : MonoBehaviour{
             kupla_.show();
             gameObj.SetActive(false);
     	}
-    	else{
-    		Debug.Log("You already found the medicine...");
-    	}
     }
 }

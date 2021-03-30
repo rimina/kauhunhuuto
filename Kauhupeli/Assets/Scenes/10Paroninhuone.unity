@@ -521,7 +521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292.5, y: -162.02}
+  m_AnchoredPosition: {x: -320, y: 0.0000076293945}
   m_SizeDelta: {x: 160, y: 94.9605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614354874
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6815895cd43a31a499b1ba37d2f185f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8864655198705965085, guid: 9f4cd91a57d5546e1a15997ef85ebac2,
+  objectToSpawn: {fileID: 5536799812347525947, guid: af749f341dd867b42a9501744df920d4,
     type: 3}
 --- !u!4 &2109104415
 Transform:
@@ -975,7 +975,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109104413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.970411, y: -1.3691752, z: -7.2777505}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -18,6 +18,8 @@ public class GameState{
 
     private bool onWindow_ = false;
 
+    private bool gameEnded_ = false;
+
     private int keittiossaKayty_ = 0;
 
     private RaakaAine[] ainekset_ = new RaakaAine[9];
@@ -130,39 +132,35 @@ public class GameState{
         }
     }
 
+    public bool gameEnded(){
+        return gameEnded_;
+    }
+    public void setGameEnded(bool val){
+        gameEnded_ = val;
+    }
+
 
     //END CONDITIONS
     public Loppu checkEndCondition(){
         if(beastSightCount_ >= 3){
-            Debug.Log("Kuolit pelkoon!");
             return Loppu.PETOKUOLEMA;
-            //return true;
         }
         else if(laakeVietyYstavalle_ && !ruokaViety_){
-            Debug.Log("Ystävä selvisi, sinä kuolit");
             return Loppu.NEUTRAL;
-            //return true;
 
         }
         else if(ruokaViety_ && laakeVietyParonille_ && !myrkytetty_){
-            Debug.Log("Petit ystäväsi ja siirryit paronin puolelle");
             return Loppu.BARON;
-            //return true;
         }
         else if(ruokaViety_ && !myrkytetty_){
-            Debug.Log("Sinä selvisit, ystäväsi kuoli");
             return Loppu.BAD;
-            //return true;
         }
 
         else if(ruokaViety_ && myrkytetty_){
-            Debug.Log("Sinä ja ystäväsi selvisitte");
             return Loppu.GOOD;
-            //return true;
         }
         else{
             return Loppu.JATKUU;
-            //return false;
         }
     }
 }
