@@ -136,6 +136,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peili
       objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
       propertyPath: m_RootOrder
@@ -685,6 +690,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ikkuna
       objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
       propertyPath: m_RootOrder
@@ -942,6 +952,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Takka
       objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1025,6 +1040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPCt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
@@ -1247,6 +1267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kori
       objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1454,6 +1479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tuoli
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
@@ -2010,6 +2040,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koira
       objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2162,6 +2197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Savu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
@@ -2470,6 +2510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ketju
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184239280153435281, guid: 108537eb5319b48f9bbfa41619bac75f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184239280153435282, guid: 108537eb5319b48f9bbfa41619bac75f,
         type: 3}
