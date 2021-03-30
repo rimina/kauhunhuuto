@@ -30,7 +30,7 @@ public class RoomScript : MonoBehaviour {
 		Loppu end = GameState.Instance.checkEndCondition();
 
 		if(end == Loppu.PETOKUOLEMA){
-			changescene("Ending_Baron");
+			changescene("Ending_Fear");
 		}
 		else if(end == Loppu.NEUTRAL){
 			changescene("Ending_Neutral");

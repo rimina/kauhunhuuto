@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/8Kirjasto.unity
     guid: ec7d8ef595ec441beb8146170872b4e4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/9Tyohuone.unity
     guid: a477859bb209849caa49c8fdf75fe304
   - enabled: 1
@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kirja.unity
     guid: 3dbfebb994e49e941baedd99f16bcdc7
+  - enabled: 1
+    path: Assets/Scenes/Ending_Fear.unity
+    guid: e3dd0f8b33f7ca24e96074dc6ca505e9
   m_configObjects: {}
