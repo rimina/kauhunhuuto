@@ -4,19 +4,19 @@ using System.Collections.Generic;
 
 //HUOM placeholder ainekset
 public enum Aine{
-    Lohi,
-    Sitruuna,
-    Salaatti,
+    LOHI,
+    SITRUUNA,
+    SALAATTI,
 
-    Janis,
-    Sipuli,
-    Sienet,
+    JANIS,
+    SIPULI,
+    SIENET,
     
-    Kana,
-    Porkkana,
-    Nauris,
+    KANA,
+    PORKKANA,
+    NAURIS,
 
-    Tyhja
+    TYHJA
 }
 
 public struct RaakaAine{
@@ -45,17 +45,17 @@ public class Aines : MonoBehaviour{
 
         //Alustetaan ainesosamappi
         mapping_ = new Dictionary<string, Aine>();
-        mapping_.Add("Lohi", Aine.Lohi);
-        mapping_.Add("Sitruuna", Aine.Sitruuna);
-        mapping_.Add("Salaatti", Aine.Salaatti);
+        mapping_.Add("Lohi", Aine.LOHI);
+        mapping_.Add("Sitruuna", Aine.SITRUUNA);
+        mapping_.Add("Salaatti", Aine.SALAATTI);
 
-        mapping_.Add("Janis", Aine.Janis);
-        mapping_.Add("Sipuli", Aine.Sipuli);
-        mapping_.Add("Sienet", Aine.Sienet);
+        mapping_.Add("Janis", Aine.JANIS);
+        mapping_.Add("Sipuli", Aine.SIPULI);
+        mapping_.Add("Sienet", Aine.SIENET);
 
-        mapping_.Add("Kana", Aine.Kana);
-        mapping_.Add("Porkkana", Aine.Porkkana);
-        mapping_.Add("Nauris", Aine.Nauris);
+        mapping_.Add("Kana", Aine.KANA);
+        mapping_.Add("Porkkana", Aine.PORKKANA);
+        mapping_.Add("Nauris", Aine.NAURIS);
 
         //Alustetaan ainesosa...
         string[] nimi = gameObj.ToString().Split(' ');
@@ -77,6 +77,10 @@ public class Aines : MonoBehaviour{
 
     void Start(){
         gameObj.transform.localPosition = tila_.paikka;
+    }
+
+    public void hide(){
+        gameObj.SetActive(false);
     }
 
     void OnMouseDown(){

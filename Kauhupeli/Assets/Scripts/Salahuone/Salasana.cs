@@ -11,7 +11,6 @@ public class Salasana : MonoBehaviour{
 
     public void CheckString(){
         string verrattava = input_.text.ToUpper();
-        Debug.Log("teksti:" + verrattava);
         if(salasana_.Equals(verrattava)){
             huone_.changescene("11Salahuone");
         }

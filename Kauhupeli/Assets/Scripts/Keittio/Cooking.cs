@@ -1,14 +1,25 @@
 using UnityEngine;
 using System.Collections;
 
+public enum Ateria{
+    KALA,
+    PIIRAS,
+    KEITTO,
+
+    KESKEN
+}
+
 
 public struct Resepti{
     public Aine[] ainekset_;
     public bool superior_;
     public bool valmis_;
+    public Ateria nimi_;
 }
 
 public class Cooking : MonoBehaviour{
+
+    [SerializeField] Annos lautanen_;
 
     private Resepti kala_;
     private Resepti piiras_;
@@ -20,27 +31,36 @@ public class Cooking : MonoBehaviour{
     //alustetaan tila
     void Awake(){
         //HUOM, placeholder reseptit
-        kala_.superior_ = false;
         kala_.valmis_ = true;
-        kala_.ainekset_ = new Aine[] {Aine.Lohi, Aine.Sitruuna, Aine.Salaatti};
+        kala_.superior_ = true;
+        kala_.nimi_ = Ateria.KALA;
+        kala_.ainekset_ = new Aine[] {Aine.LOHI, Aine.SITRUUNA, Aine.SALAATTI};
 
-        piiras_.valmis_ = true;
+        piiras_.valmis_ = false;
         piiras_.superior_ = true;
-        piiras_.ainekset_ = new Aine[] {Aine.Janis, Aine.Sipuli, Aine.Sienet};
+        piiras_.nimi_ = Ateria.PIIRAS;
+        piiras_.ainekset_ = new Aine[] {Aine.JANIS, Aine.SIPULI, Aine.SIENET};
 
-        keitto_.superior_ = false;
         keitto_.valmis_ = true;
-        keitto_.ainekset_ = new Aine[] {Aine.Kana, Aine.Porkkana, Aine.Nauris};
+        keitto_.superior_ = false;
+        keitto_.nimi_ = Ateria.KEITTO;
+        keitto_.ainekset_ = new Aine[] {Aine.KANA, Aine.PORKKANA, Aine.NAURIS};
 
     }
 
     void Start(){
         pelaaja_ = GameState.Instance.getPlayerRecipe();
+
         if(pelaaja_.ainekset_ == null){
-            pelaaja_.ainekset_ = new Aine[] {Aine.Tyhja, Aine.Tyhja, Aine.Tyhja};
+            pelaaja_.ainekset_ = new Aine[] {Aine.TYHJA, Aine.TYHJA, Aine.TYHJA};
             pelaaja_.superior_ = false;
             pelaaja_.valmis_ = false;
+            pelaaja_.nimi_ = Ateria.KESKEN;
             GameState.Instance.setPlayerRecipe(pelaaja_);
+        }
+
+        if(pelaaja_.valmis_){
+            lautanen_.setImage(pelaaja_.nimi_);
         }
 
     }
@@ -62,6 +82,9 @@ public class Cooking : MonoBehaviour{
         }
         if(oikein == 3){
             Debug.Log("ruoka on valmis");
+            pelaaja_.nimi_ = vertailtava.nimi_;
+            pelaaja_.valmis_ = vertailtava.valmis_;
+            pelaaja_.superior_ = vertailtava.superior_;
             return true;
         }
         else{
@@ -75,22 +98,22 @@ public class Cooking : MonoBehaviour{
         if(!GameState.Instance.getRuokaValmis()){
             bool valmis = false;
             if(onkoOikeaResepti(kala_)){
-                pelaaja_.valmis_ = true;
-                pelaaja_.superior_ = true;
                 valmis = true;
             }
             else if(onkoOikeaResepti(piiras_)){
-                pelaaja_.superior_ = false;
-                pelaaja_.valmis_ = true;
                 valmis = true;
             }
             else if(onkoOikeaResepti(keitto_)){
-                pelaaja_.valmis_ = true;
-                pelaaja_.superior_ = false;
                 valmis = true;
             }
-            GameState.Instance.setRuokaValmis(valmis);
+            if(valmis){
+                GameState.Instance.setRuokaValmis(valmis);
+                lautanen_.setImage(pelaaja_.nimi_);
+            }
+            
             GameState.Instance.setPlayerRecipe(pelaaja_);
+            
+
             return valmis;
         }
         else{
@@ -104,7 +127,7 @@ public class Cooking : MonoBehaviour{
             bool ok = false;
             int index = 0;
             for(int i = 0; i < 3; ++i){
-                if(pelaaja_.ainekset_[i] == Aine.Tyhja){
+                if(pelaaja_.ainekset_[i] == Aine.TYHJA){
                     pelaaja_.ainekset_[i] = ingredient;
                     index = i;
                     Debug.Log("added ingredient: " + pelaaja_.ainekset_[i] + " at position " + i);
@@ -115,7 +138,8 @@ public class Cooking : MonoBehaviour{
             if(ok){
                 GameState.Instance.setPlayerRecipe(pelaaja_);
                 if(index == 2){
-                    checkFood();
+                    if(checkFood()){
+                    }
                 }
             }
             else{
@@ -137,7 +161,7 @@ public class Cooking : MonoBehaviour{
             for(int i = 0; i < 3; ++i){
                 if(pelaaja_.ainekset_[i] == ingredient){
                     Debug.Log("removed ingredient: " + pelaaja_.ainekset_[i] + " at position " + i);
-                    pelaaja_.ainekset_[i] = Aine.Tyhja;
+                    pelaaja_.ainekset_[i] = Aine.TYHJA;
                     ok = true;
                     break;
                 }

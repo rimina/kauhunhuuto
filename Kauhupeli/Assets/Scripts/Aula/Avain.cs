@@ -5,8 +5,9 @@ public class Avain : MonoBehaviour{
     public GameObject gameObj;
 
     private bool avain_ = false;
-    private float timeLeft_ = 2000.0f;
+    private float timeLeft_ = 3000.0f;
     private float time_ = 0.0f;
+    
     [SerializeField] Puhekupla kupla_;
     bool nakyvissa_ = false;
 
@@ -35,7 +36,7 @@ public class Avain : MonoBehaviour{
             if(timeLeft_ <= 0.0){
                 kupla_.hide();
                 nakyvissa_ = false;
-                timeLeft_ = 2000.0f;
+                timeLeft_ = 3000.0f;
             }
         }
     }
