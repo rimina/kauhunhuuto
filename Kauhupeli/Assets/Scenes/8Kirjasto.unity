@@ -1121,6 +1121,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1703349046249608363, guid: e6ffc6b7ea51643ed8633d7dabc5cf0c,
+        type: 3}
+      propertyPath: kupla_
+      value: 
+      objectReference: {fileID: 1442492840}
     - target: {fileID: 1703349046249608372, guid: e6ffc6b7ea51643ed8633d7dabc5cf0c,
         type: 3}
       propertyPath: m_Radius
@@ -1592,6 +1597,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b5185214b9742cc94222ae6761461c, type: 3}
+--- !u!114 &1442492840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6737571039812337678, guid: 65b5185214b9742cc94222ae6761461c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1442492839}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6815895cd43a31a499b1ba37d2f185f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1454634659
 GameObject:
   m_ObjectHideFlags: 0
