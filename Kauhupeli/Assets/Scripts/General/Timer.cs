@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour{
     void Start(){
         time_ = Time.time;
         if(GameState.Instance.onWindow()){
-            timeLeft_ = Random.Range(5.0f, 20.0f)*1000.0f;
+            timeLeft_ = Random.Range(2.0f, 10.0f)*1000.0f;
         }
         else{
             timeLeft_ = Random.Range(40.0f, 120.0f)*1000.0f;
@@ -29,9 +29,9 @@ public class Timer : MonoBehaviour{
         if(timeLeft_ <= 0.0){
             time_ = Time.time;
 
-            //Jos paroni spawnasi, se piilotetaan 5s päästä
+            //Jos paroni spawnasi, se piilotetaan 3s päästä
             if(baron_.spawn()){
-                timeLeft_ = 500.0f;
+                timeLeft_ = 300.0f;
             }
             else{
                 //Muuten arvotaan random väli

@@ -36,7 +36,6 @@ public class GameState{
     //PETO
     public void beastSeen(){
         ++beastSightCount_;
-        Debug.Log("Beast seen: " + beastSightCount_);
     }
     public int getBeastSightCount(){
         return beastSightCount_;

@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour{
 
     private AudioSource audio_;
 
-    private float timeLeft_ = 1500.0f;
+    private float timeLeft_ = 2000.0f;
     private float time_ = 0.0f;
 
     void Start(){
@@ -37,9 +37,14 @@ public class NPC : MonoBehaviour{
         if(kupla_.nakyyko()){
             timeLeft_ -= delta;
             if(timeLeft_ <= 0.0){
-                timeLeft_ = 1500.0f;
+                timeLeft_ = 2000.0f;
                 time_ = Time.time;
                 kupla_.hide();
+                if(audio_ != null){
+                    if(audio_.isPlaying){
+                        audio_.Stop();
+                    }
+                }
             }
         }
     }
