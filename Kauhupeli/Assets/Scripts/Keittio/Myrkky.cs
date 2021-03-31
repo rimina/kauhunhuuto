@@ -18,7 +18,7 @@ public class Myrkky : MonoBehaviour{
     		gameObj.SetActive(false);
     	}
     }
-    
+
     void Start(){
         time_ = Time.time;
     }
@@ -29,6 +29,7 @@ public class Myrkky : MonoBehaviour{
     		GameState.Instance.setMyrkytys(myrkytetty_);
             myrkkyteksti_.show();
             nakyvissa_ = true;
+            time_ = Time.time;
     	}
     	else{
     		Debug.Log("why am I still visible?");
@@ -42,6 +43,7 @@ public class Myrkky : MonoBehaviour{
             if(timeLeft_ <= 0.0){
                 myrkkyteksti_.hide();
                 nakyvissa_ = false;
+                timeLeft_ = 1000.0f;
                 gameObj.SetActive(false);
             }
         }

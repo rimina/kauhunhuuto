@@ -18,6 +18,7 @@ public class NPC : MonoBehaviour{
     void OnMouseDown(){
         if(!kupla_.nakyyko()){
             kupla_.show();
+            time_ = Time.time;
         }
         else{
             kupla_.hide();
