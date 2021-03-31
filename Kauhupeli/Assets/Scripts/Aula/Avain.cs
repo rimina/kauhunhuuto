@@ -15,6 +15,10 @@ public class Avain : MonoBehaviour{
     	avain_ = GameState.Instance.getAvainLoydetty();
     }
 
+    void Start(){
+        time_ = Time.time;
+    }
+
     void OnMouseDown(){
     	if(!avain_){
     		avain_ = true;

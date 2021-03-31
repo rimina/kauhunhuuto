@@ -9,6 +9,10 @@ public class Ystava : MonoBehaviour{
     private float timeLeft_ = 2000.0f;
     private float time_ = 0.0f;
 
+    void Start(){
+        time_ = Time.time;
+    }
+
     void OnMouseDown(){
         if(GameState.Instance.getLaakeLoydetty()){
             GameState.Instance.setLaakeVietyYstavalle(true);

@@ -21,6 +21,8 @@ public class RuokiParoni : MonoBehaviour{
 
 
     void Awake(){
+        rkTime_ = Time.time;
+        lkTime_ = Time.time;
         if((GameState.Instance.getLaakeLoydetty() && !GameState.Instance.getLaakeVietyYstavalle()) ||
             GameState.Instance.getLaakeVietyParonille()){
 

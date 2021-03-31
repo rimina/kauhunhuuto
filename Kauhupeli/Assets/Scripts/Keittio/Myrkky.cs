@@ -18,6 +18,10 @@ public class Myrkky : MonoBehaviour{
     		gameObj.SetActive(false);
     	}
     }
+    
+    void Start(){
+        time_ = Time.time;
+    }
 
     void OnMouseDown(){
     	if(!myrkytetty_){

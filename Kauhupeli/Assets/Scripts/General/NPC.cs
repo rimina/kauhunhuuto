@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour{
 
     void Start(){
         audio_ = GetComponent<AudioSource>();
+        time_ = Time.time;
     }
 
     void OnMouseDown(){
