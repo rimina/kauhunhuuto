@@ -20,6 +20,7 @@ public struct Resepti{
 public class Cooking : MonoBehaviour{
 
     [SerializeField] Annos lautanen_;
+    [SerializeField] AudioSource tirina_;
 
     private Resepti kala_;
     private Resepti piiras_;
@@ -137,8 +138,14 @@ public class Cooking : MonoBehaviour{
             }
             if(ok){
                 GameState.Instance.setPlayerRecipe(pelaaja_);
+                if(!tirina_.isPlaying){
+                    tirina_.Play();
+                }
                 if(index == 2){
                     if(checkFood()){
+                        if(tirina_.isPlaying){
+                            tirina_.Stop();
+                        }
                     }
                 }
             }
@@ -154,16 +161,30 @@ public class Cooking : MonoBehaviour{
         
     }
 
+    private bool onkoTyhja(bool[] tyhja){
+        bool ok = true;
+        for(int i = 0; i < tyhja.Length; ++i){
+            if(!tyhja[i]){
+                ok = false;
+                break;
+            }
+        }
+        return ok;
+    }
+
     //poistaa aineksen pelaajan tekemästä ruoasta
     public bool removeIngredient(Aine ingredient){
         if(!GameState.Instance.getRuokaValmis()){
             bool ok = false;
+            bool[] tyhja = {false, false, false};
             for(int i = 0; i < 3; ++i){
                 if(pelaaja_.ainekset_[i] == ingredient){
                     Debug.Log("removed ingredient: " + pelaaja_.ainekset_[i] + " at position " + i);
                     pelaaja_.ainekset_[i] = Aine.TYHJA;
                     ok = true;
-                    break;
+                }
+                if(pelaaja_.ainekset_[i] == Aine.TYHJA){
+                    tyhja[i] = true;
                 }
             }
             if(ok){
@@ -172,6 +193,11 @@ public class Cooking : MonoBehaviour{
             else{
                 Debug.Log("ingredient not found");
             }
+
+            if(onkoTyhja(tyhja) && tirina_.isPlaying){
+                tirina_.Stop();
+            }
+
             return ok;
         }
         else{

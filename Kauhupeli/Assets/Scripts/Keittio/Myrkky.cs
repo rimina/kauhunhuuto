@@ -38,7 +38,6 @@ public class Myrkky : MonoBehaviour{
             if(timeLeft_ <= 0.0){
                 myrkkyteksti_.hide();
                 nakyvissa_ = false;
-                timeLeft_ = 1000.0f;
                 gameObj.SetActive(false);
             }
         }

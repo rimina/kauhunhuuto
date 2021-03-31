@@ -60,7 +60,6 @@ public class RuokiParoni : MonoBehaviour{
             if(rkTimeLeft_ <= 0.0){
                 ruokakupla_.hide();
                 rkNakyvissa_ = false;
-                rkTimeLeft_ = 2000.0f;
             }
         }
 
@@ -70,7 +69,6 @@ public class RuokiParoni : MonoBehaviour{
             if(lkTimeLeft_ <= 0.0){
                 laakekupla_.hide();
                 lkNakyvissa_ = false;
-                lkTimeLeft_ = 2000.0f;
             }
         }
     }
