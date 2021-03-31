@@ -4,8 +4,15 @@ using System.Collections;
 public class NPC : MonoBehaviour{
 
     [SerializeField] Puhekupla kupla_;
+
+    private AudioSource audio_;
+
     private float timeLeft_ = 1500.0f;
     private float time_ = 0.0f;
+
+    void Start(){
+        audio_ = GetComponent<AudioSource>();
+    }
 
     void OnMouseDown(){
         if(!kupla_.nakyyko()){
@@ -13,6 +20,15 @@ public class NPC : MonoBehaviour{
         }
         else{
             kupla_.hide();
+        }
+
+        if(audio_ != null){
+            if(!audio_.isPlaying){
+                audio_.Play();
+            }
+            else{
+                audio_.Stop();
+            }
         }
     }
 

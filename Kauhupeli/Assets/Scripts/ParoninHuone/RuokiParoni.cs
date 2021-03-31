@@ -5,6 +5,7 @@ public class RuokiParoni : MonoBehaviour{
 
     [SerializeField] Puhekupla ruokakupla_;
     [SerializeField] Puhekupla laakekupla_;
+    [SerializeField] AudioSource asmr_;
 
     private bool ruokaViety_ = false;
     private bool kuollut_ = false;
@@ -51,6 +52,13 @@ public class RuokiParoni : MonoBehaviour{
             rkNakyvissa_ = true;
             rkTime_ = Time.time;
     	}
+
+        if(!asmr_.isPlaying){
+            asmr_.Play();
+        }
+        else{
+            asmr_.Stop();
+        }
     }
 
     void Update(){
